@@ -13,5 +13,13 @@ int check_type(v_print *param,const char *str,int *i)
 		format_nbr(param,&len);
 	if(str[*i] == 's')
 		format_str(param,&len);
+	if(str[*i] == 'u')
+		format_u(param,&len);
+	if(str[*i] == 'x' || str[*i] == 'X')
+		format_x(param,str[*i],&len);
+	if(str[*i] == '%')
+		len += ft_putchar('%');
+	if(str[*i] == 'p')
+		format_p(param,&len);
 	return(len);
 }
