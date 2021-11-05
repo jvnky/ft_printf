@@ -3,30 +3,33 @@
 
 #include "ft_printf.h"
 
-
 int	ft_printf(const char *str, ...)
 {
-	va_list param;
+	int i;  		
+	int len ;
+	v_print *param;
 	
-	char c;
-	c = 0;
-  	
-	if (str == NULL)
+
+
+	param = (v_print *)malloc(1*sizeof(v_print));	
+	if (!param)
 		return (0);
+	i = 0;
+	len = 0;
+	va_start(param->args,str);
 	
-	va_start(param,str);		
-	printf("---%s\n",str);	
-	printf("Letter ---\n");	
-	while(str[c] != '\0')
+	while(str[i] != 0)
 	{
 		
-//	printf("%c",str[c]);	
-		if(str[c]!= '%')
-			ft_putchar(str[c]);
+		if (str[i] =='%')
+			len = len + check_type(param,str,&i);
+		else
+			len = len + ft_putchar(str[i]);	
+		i++;
+	}
 
-	c++;	
-	}	   
-	printf("\n");	
-	va_end(param);
-	return (0);
+
+	free(param);
+	va_end(param->args);
+	return (len);
 }
