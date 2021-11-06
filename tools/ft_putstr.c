@@ -10,9 +10,10 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if(!s)
-		return (0);
+		s = "(null)";
 	while(s[i])
 	{
+
 		ft_putchar(s[i]);
 		i++;
 	}

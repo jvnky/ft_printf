@@ -11,9 +11,10 @@ SRCS = src/ft_printf.c \
 		tools/format_u.c \
 		tools/ft_putchar.c \
 		tools/ft_putstr.c \
-
+		tools/check_type.c \
 
 OBJ = ft_printf.o \
+		check_type.o	\
 		format_nbr.o 	 \
 		format_str.o 	 \
 		format_x.o	 \
@@ -34,8 +35,11 @@ $(NAME): $(OBJ)
 
 $(OBJ): $(SRCS)$(INCLUDES)
 	@gcc $(CC_FLAG) -c $(SRCS)
-	@ar rcs $(NAME) $(ONJ)
+	@ar rcs $(NAME) $(OBJ)
+	@rm $(OBJ) 	
 all: $(NAME)
+
+bonus: all
 clean:
 	rm -rf $(OBJ)
 

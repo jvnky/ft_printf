@@ -23,8 +23,8 @@ void format_p(v_print *param,int *len)
 	unsigned long n;
 
 	n = va_arg(param->args,unsigned long);
-	if (n ==0)
-		*len += ft_putstr("(nil)");
+	if (n == 0)
+		*len += ft_putstr("0x0");
 	else
 	{
 		*len += ft_putstr("0x");

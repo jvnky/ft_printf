@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+
 typedef struct t_print
 {
 	va_list args;

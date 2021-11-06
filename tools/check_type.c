@@ -1,6 +1,5 @@
 
 #include "tools.h"
-
 int check_type(v_print *param,const char *str,int *i)
 {
 	int len;

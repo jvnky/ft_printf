@@ -18,7 +18,7 @@ int	ft_printf(const char *str, ...)
 	len = 0;
 	va_start(param->args,str);
 	
-	while(str[i] != 0)
+	while(str[i])
 	{
 		
 		if (str[i] =='%')
