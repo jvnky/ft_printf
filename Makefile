@@ -34,17 +34,17 @@ INCLUDES = src/ft_printf.h 	\
 $(NAME): $(OBJ)
 
 $(OBJ): $(SRCS)$(INCLUDES)
+	@printf Compilate
 	@gcc $(CC_FLAG) -c $(SRCS)
-	@ar rcs $(NAME) $(OBJ)
-	@rm $(OBJ) 	
+	@ar rcs $(NAME) $(OBJ) 	
 all: $(NAME)
 
 bonus: all
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
